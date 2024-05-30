@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <title>Westridge Ceramics</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/297392fead.js" crossorigin="anonymous"></script>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Concert+One&family=Kumbh+Sans:wght,YOPQ@100..900,116&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Shrikhand&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+
+    
+</head>
+<body class="body">
+  
+  <%- include('partials/navbar') %> 
+
+  <div class="page-top">
+    <h2 class="page-title">Account</h2>
+    
+    <p><a href="/logout" class="logout-button">Log Out</a></p>
+  </div>
+  
+    
+  <div class="home-button-group">
+    <p><a href="/uploadArt" class="upload-button">Upload Art</a></p>
+    
+    <p><a href="/uploadGlaze" class="page-button">Upload Glaze</a></p>
+  </div>
+  
+  <div class="user-posts">
+    <h3 class="account-subtitle">Your Artwork:</h3>
+    <div class="post-list account-list">
+      <% userPosts.forEach((post) => { %>
+        <div class="account-post">
+          <div class="image-container">
+            <img class="post-image" src="/images/<%= post.imageFiles[0] %>" alt="">
+          </div>
+          <h3 class="post-title"><%= post.title %></h3>
+          <% if (post.author) { %>
+            <p class="post-name">By <%= post.author.username %></p>
+          <% } else { %>
+            <p>Unknown Author</p>
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+</body>
+</html>

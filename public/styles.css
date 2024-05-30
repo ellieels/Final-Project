@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Concert+One&family=Kumbh+Sans:wght,YOPQ@100..900,116&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Shrikhand&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat';
+  background-color: #F9F4F4;
+} 
+
+/*-------HOME-------*/
+
+.home-top{
+  text-align: center;
+  border-bottom: 0.15vw solid #c9c5c5;
+  margin: 0 3vw 0 3vw;
+}
+
+.home-title{
+  font-family: 'Newsreader';
+  font-size: 4.3vw;
+  font-weight: 300;
+  margin: 10vw 0 5vw 0;
+  color: #333;
+}
+
+.home-button-group{
+  display: flex;
+  margin: 3vw 30vw 3vw 30vw;
+}
+
+.page-button{
+  background-color: #47763B;
+  color: #F9F4F4;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3vw;
+  margin: 1vw 2vw 1vw 2vw;
+  border-radius: 2vw;
+  padding: 1.3vw 1.5vw 1.3vw 1.5vw;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.upload-button{
+  background-color: #47763B;
+  color: #F9F4F4;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3vw;
+  margin: 1vw 4vw 1vw 7vw;
+  border-radius: 2vw;
+  padding: 1.3vw 2.2vw 1.3vw 2.2vw;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+
+.page-button:hover, .upload-button:hover{
+  background-color: #2c4f24;
+  color: #F9F4F4;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.submit-button{
+  background-color: #47763B;
+  color: #F9F4F4;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3vw;
+  margin: 0 9.8vw;
+  border-radius: 2vw;
+  padding: 1vw 3vw 1vw 3vw;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.glaze-submit-button{
+  background-color: #47763B;
+  color: #F9F4F4;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3vw;
+  margin: 0 42vw;
+  border-radius: 2vw;
+  padding: 1vw 3vw 1vw 3vw;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.class-section{
+  display: flex;
+  margin: 2vw 0 2vw 1.5vw;
+}
+
+.class-title-name{
+  margin: 1vw 2vw 0 20vw;
+  width: 10vw;
+  color: #47763B;
+  font-size: 1.2vw
+}
+
+.class-description{
+  width: 44vw;
+  margin: 1vw 9vw 1vw 3vw;
+  font-size: 1.2vw;
+}
+
+
+/*-------GALLERY-------*/
+
+.page-top{
+  border-bottom: 0.15vw solid #c9c5c5;
+  margin: 0 3vw 0 3vw;
+  display: flex;
+}
+
+.page-title{
+  font-family: 'Newsreader';
+  font-size: 3.5vw;
+  margin: 1vw 0 1vw 0;
+  font-weight: 300;
+  color: #333;
+}
+
+#searchInput{
+  width: 30vw;
+  height: 3.5vw;
+  border-radius: 2vw;
+  margin: auto 22vw;
+  padding: 1vw;
+  border: 0.2vw solid #c9c5c5;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: 2vw;
+}
+
+.post {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 1vw 0 1vw 0;
+  transition: transform 0.2s;
+}
+
+.post:hover, account-post:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  width: 24vw;
+  height: 24vw; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5vw;
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F9F4F4;
+  border-radius: 1.5vw;
+  padding: 2vw;
+  z-index: 1000;
+  width: 70vw;
+  height: 40vw;
+}
+
+.popup-display{
+  display: flex;
+}
+
+.popup-image-container {
+  width: 35vw;
+  height: 35vw;
+  margin: 0.5vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5vw;
+}
+
+.popup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-content{
+  width: 25vw;
+  margin: 1vw 2vw;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.next-image{
+  background: none;
+  position: absolute;
+  top: 18.5vw;
+  left: 35vw;
+  z-index: 9999;
+  border: none;
+  font-size: 2vw;
+}
+
+.post-date{
+  font-size: 0.9vw;
+  position: absolute;
+  top: 3vw;
+  right: 4vw;
+}
+
+.post-title{
+  font-size: 2.2vw;
+  margin-top: 0.5vw;
+}
+.post-class, .post-glaze, .post-author, .post-description{
+  font-size: 1.2vw;
+}
+
+.associated-posts{
+  display: flex;
+}
+
+.piece-image-container{
+  width: 18vw;
+  height: 18vw; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vw;
+  margin-bottom: 0.5vw;
+}
+
+.associated-posts{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: 2vw;
+  text-align: center;
+}
+
+.example-pieces{
+  margin: 1vw 1vw 2vw 1vw;
+  
+}
+
+
+/*-------GLAZES-------*/
+
+.glaze-post-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin-top: 2vw;
+}
+
+.glazePost {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 1vw 0 1vw 0;
+  transition: transform 0.2s;
+}
+
+.glazePost:hover {
+  transform: scale(0.95);
+}
+
+.glaze-image-container {
+  height: 15vw;
+  width: 15vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vw;
+}
+
+.post-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.display-flex{
+  display:flex;
+}
+
+.glaze-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F9F4F4;
+  border-radius: 1.5vw;
+  padding: 2vw;
+  z-index: 1000;
+  width: 70vw;
+  height: 40vw;
+  overflow-y: auto; /* Add overflow property to make the popup scrollable */
+}
+
+.popup-display{
+  display: flex;
+}
+
+.popup-image-container {
+  width: 35vw;
+  height: 35vw;
+  margin: 0.5vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5vw;
+}
+
+.glaze-popup-image {
+   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-content {
+  width: 25vw;
+  margin: 1vw 2vw;
+  overflow-y: auto; /* Add overflow property to make content scrollable */
+  max-height: calc(40vw - 4vw - 20px); /* Adjust max-height based on the popup height and padding */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.glaze-title{
+  font-size: 1.8vw;
+}
+
+
+/*-------ACCOUNT-------*/
+
+
+.logout-button{
+  color: #333;
+  border: 0.2vw solid #c9c5c5;
+  padding: 0.5vw;
+  border-radius: 1.5vw;
+  position: absolute;
+  top: 6.5vw;
+  right: 3vw;
+  font-size: 1vw;
+}
+
+.logout-button:hover{
+  color: #333;
+  border: 0.2vw solid #c9c5c5;
+  padding: 0.5vw;
+  border-radius: 1.5vw;
+  position: absolute;
+  background-color: #d9ded7;
+  top: 6.5vw;
+  right: 3vw;
+  font-size: 1vw;
+  text-decoration: none;
+}
+
+.account-post {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 1vw 4vw 1vw 4vw;
+  transition: transform 0.2s;
+}
+
+.account-list{
+  display: flex;
+  margin-left:2vw;
+}
+
+.account-subtitle{
+  font-size: 2.8vw;
+  margin-left: 4vw;
+}
+
+/*-------UPLOAD ART-------*/
+
+.uploadsections{
+  margin: 0 6vw 0 22vw;
+  display: flex;
+  
+}
+
+.section1, .section2{
+  margin: 3vw 2vw 3vw 2vw;
+}
+
+.back-button {
+  position: absolute;
+  top: 13vw; /* Responsive positioning */
+  left: 3vw; /* Responsive positioning */
+  font-size: 2vw; /* Responsive font size */
+  color: black;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  position: absolute;
+  top: 13vw; /* Responsive positioning */
+  left: 3vw; /* Responsive positioning */
+  font-size: 2vw; /* Responsive font size */
+  color: black;
+  text-decoration: none;
+}
+
+.subtitle{
+  font-size: 2.5vw;
+  margin: 1.8vw 0 0 36vw;
+}
+
+
+/*-------NAVBAR-------*/
+
+.navbar {
+    align-items: center;
+    display: flex;
+}
+
+.logo{
+  width: 4vw;
+  margin: 0 0.5vw 0 0;
+}
+
+.navbar-title {
+    text-decoration: none;
+    font-size: 2.2vw;
+    color: #47763B;
+}
+
+.navbar-title:hover {
+    text-decoration: none;
+  color: #47763B;
+}
+
+.nav-button {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1vw;
+  margin: 1vw 2vw 1vw 2vw;
+  border-radius: 1.4vw;
+  padding: 0.7vw;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-button:focus, .nav-button:hover {
+  text-decoration: none;
+  outline: none;
+  color: #333;
+  background-color: #d9ded7;
+}
+
+.nav-button-group{
+  display: flex;
+  margin-top: 1vw;
+}
+
+/*-------LOGIN + REGISTER-------*/
+
+.login-body, .register-body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1599586298259-3164a6d49543?q=80&w=2730&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 40vw; 
+    margin: 0 25vw 0 25vw;
+    background-color: transparent;
+    padding: 3vw;
+    text-align: center;
+}
+
+.login-title {
+    text-align: center;
+    color: #333;
+    font-size: 3vw; /* Increase font size for the title */
+    margin-bottom: 3vw; /* Add more spacing below the title */
+}
+
+.login-form {
+    margin-top: 2vw;
+}
+
+.login-label {
+    display: block;
+    margin-bottom: 1vw; /* Add more spacing between labels */
+    color: #333;
+    font-size: 1.2vw; /* Increase font size for labels */
+}
+
+.login-input {
+    width: 20vw;
+    padding: 1vw; /* Increase padding for larger input fields */
+    margin-bottom: 2vw; /* Add more spacing between input fields */
+    border: 0.2px solid #c9c5c5;
+    border-radius: 1vw;
+    font-size: 1.2vw; /* Increase font size for input fields */
+}
+
+.register{
+  color: #47763B;
+}
+.register:hover{
+  text-decoration: none;
+}
+
+.login-text {
+    margin-top: 20px; /* Add more spacing above the paragraph */
+    text-align: center;
+  color: #333;
+}
+
+.register{
+    text-decoration: none; /* Remove underline */
+}
+

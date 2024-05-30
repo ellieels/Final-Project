@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Westridge Ceramics</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="body">
+
+  
+  <%- include('partials/navbar') %>  
+
+  <div class="page-top">
+    <h2 class="page-title">Account</h2>
+    
+    <p><a href="/logout" class="logout-button">Log Out</a></p>
+  </div>
+ <div class="login-container">
+  <h1 class="login-title">Register</h1>
+  <form action="/register" method="POST" class="login-form">
+    <div>
+      <label class="login-label" for="email">Email:</label>
+      <input class="login-input" type="text" id="email" name="email" required>
+    </div>
+     <div>
+      <label class="login-label" for="username">Name: (first and last)</label>
+      <input class="login-input" type="text" id="username" name="username" required>
+    </div>
+    <div>
+      <label class="login-label" for="password">Password:</label>
+      <input class="login-input" type="password" id="password" name="password" required>
+    </div>
+    <button class="submit-button" type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="/login" class="register" >Login here</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <title>Westridge Ceramics</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/297392fead.js" crossorigin="anonymous"></script>
+    
+</head>
+<body class="body">
+  
+  <%- include('partials/navbar') %> 
+
+  <div class="page-top">
+    <h2 class="page-title">Account</h2>
+  </div>
+  
+  <a href="/account" class="back-button"><i class="fa-solid fa-chevron-left"></i></a>
+  
+   <h1 class="subtitle">Upload New Artwork</h1>
+    <form id="art-submissionForm" action="/postart" method="post" enctype="multipart/form-data" class="upload-form">
+      
+    <div class="uploadsections">
+      <div class="section1">
+        <div>
+            <label for="art-title"><span style="font-weight: 600;">Title:</span></label> 
+            <input type="text" id="art-title" name="title" required><br>
+        </div>
+        
+          <div>
+            <label><span style="font-weight: 600;">Class:</span></label><br>
+            <input type="radio" id="class_handbuilding" name="className" value="Handbuilding">
+            <label for="class_handbuilding">Handbuilding</label><br>
+            <input type="radio" id="class_cd1" name="className" value="Clay Design & Engineering I">
+            <label for="class_cd1">CD+E I</label><br>
+            <input type="radio" id="class_cd2" name="className" value="Clay Design & Engineering II">
+            <label for="class_cd2">CD+E II</label><br>
+        </div>
+        <div>
+            <label><span style="font-weight: 600;">Glaze:</span></label><br>
+            <% glazePosts.forEach((glazePost, index) => { %>
+            <input type="checkbox" id="glaze_<%= index %>" name="glaze[]" value="<%= glazePost.title %>">
+            <label for="glaze_<%= index %>"><%= glazePost.title %></label><br>
+            <% }); %>
+        </div>
+        
+        
+      </div>
+       
+      <div class="section2">
+  
+        <div>
+          <label for="file"><span style="font-weight: 600;">Upload Photos:</span> <br>(Click in the order you want them to be displayed)
+            </label><br>
+            
+            <input type="file" id="file" name="images" accept="image/*" multiple required><br> 
+      
+        </div>
+        <br>
+
+        <div>
+          <label for="description"><span style="font-weight: 600;">Description:</span><br>Specific glazing methods, your art process, etc.</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+        </div>
+        <br>
+        
+        <input type="submit" class="submit-button" value="Upload">
+        
+      </div>
+      </div>
+         
+    
+
+    </form>
+  
+
+  
+  
+</body>
+</html>

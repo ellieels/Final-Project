@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Westridge Ceramics</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/297392fead.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="body">
+
+  <%- include('partials/navbar') %>
+
+  <div class="page-top">
+    <h2 class="page-title">Glazes</h2>
+  </div>
+
+  <div class="glaze-post-list">
+    <% glazePosts.forEach((glazePost, index) => { %>
+    <div class="glazePost" id="glaze-popupTrigger-<%= index %>">
+      <div class="glaze-image-container">
+      <img class="post-image" src="/images/<%= glazePost.imageFile %>" alt="">
+      </div>
+      <h2 class="glaze-title"><%= glazePost.title %></h2>
+    </div>
+    <% }) %>
+  </div>
+<% glazePosts.forEach((glazePost, index) => { %>
+  <div id="glaze-popup-<%= index %>" class="glaze-popup">
+    <span class="close">×</span>
+    <div class="display-flex">
+      <div class="popup-image-container">
+      <img class="glaze-popup-image" src="/images/<%= glazePost.imageFile %>" alt="">
+      </div>
+      <div class="popup-content">
+        <h2 class="post-title"><%= glazePost.title %></h2>
+        <p class="post-description"><%= glazePost.notes %></p>
+      </div>
+    </div>
+    
+    <br>
+    <br>
+    <h2 class="popup-title">Example Pieces:</h2>
+    <br>
+    
+    <!-- Filter and display only the posts associated with the current glaze -->
+    <div class="associated-posts">
+      <% const filteredPosts = posts.filter(post => post.glaze.includes(glazePost.title)); %>
+      <% filteredPosts.forEach((post) => { %>
+        <div class="example-pieces">
+          <div class="piece-image-container">
+            <img class="post-image" src="/images/<%= post.imageFiles[0] %>" alt="">
+          </div>
+          <h3><%= post.title %></h3>
+          <p><%= post.description %></p>
+          <% if (post.author) { %>
+            <p><%= post.author.username %></p>
+          <% } else { %>
+            <p>Unknown Author</p>
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+<% }) %>
+
+  
+
+  <script src="script.js"></script>
+
+</body>
+</html>
