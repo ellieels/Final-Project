@@ -1,5 +1,5 @@
-import Post from '../Models/Post.js'; 
-import Customer from '../Models/Customer.js';
+import Post from '../models/Post.js'; 
+import Customer from '../models/Customer.js';
 import GlazePost from '../models/glazePost.js';
 
 /*
